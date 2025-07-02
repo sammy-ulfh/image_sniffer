@@ -3,9 +3,24 @@
 from mitmproxy import http
 import os
 
+start = 1
+
+def print_banner():
+    print("""
+█ █▀▄▀█ ▄▀█ █▀▀ █▀▀   █▀ █▄░█ █ █▀▀ █▀▀ █▀▀ █▀█
+█ █░▀░█ █▀█ █▄█ ██▄   ▄█ █░▀█ █ █▀░ █▀░ ██▄ █▀▄\n""")
+
+    print("""Mᴀᴅᴇ ʙʏ sᴀᴍᴍʏ-ᴜʟғʜ\n""")
+
 def response(packet):
+    global start
+
+    if start:
+        print_banner()
+        start = 0
+        os.makedirs('images', exist_ok=True)
+
     header = packet.response.headers.get("content-type", "").split('/')
-    os.makedirs('images', exist_ok=True)
 
     if "image" in header:
         header = header[-1]
@@ -19,7 +34,7 @@ def response(packet):
                 with open(f"images/{name}.{ext}", "wb") as f:
                     f.write(content)
 
-                print(f"\n[+] Imagen Almacenada: {name}")
+                print(f"\n[+] Image Saved: {name}")
         except:
             pass
 
