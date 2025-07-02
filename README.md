@@ -9,6 +9,8 @@
 
 **Image Sniffer** is a tool that captures **Images** on **HTTPS** traffic from a target device using a proxy server powered by **mitmdump**, part of the **mitmproxy** toolkit. Root privileges on the target device are required.
 
+With this tool, you can capture all visited domains and potentially exposed credentials.
+
 <p align="center">
     <img width="700"
         src="images/002.png"
