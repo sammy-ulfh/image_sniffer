@@ -103,7 +103,7 @@ This **Image Sniffer** tool allows you to capture all images transmited over HTT
 You'll see some like this:
 
 <p align="center">
-    <img width="700"
+    <img width="400"
         src="images/003.png"
         alt="Captured Images"
         style="float: left; margin-right: 10px;">
